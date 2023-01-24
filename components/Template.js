@@ -1,29 +1,36 @@
-import React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-const Template = ({ title, description, link, img }) => {
-    return (
-        <div className="bg-primary text-white p-4 rounded-lg shadow-lg ">
-            <h3 className="text-lg font-bold mb-4 ">{title}</h3>
-            <div className='grid grid-rows-2 gap-6 2xl:grid-cols-2 grid-rows-none'>
-                <div className='order-2 2xl:order-1'>
-                    <div className="flex flex-col gap-10 justify-between">
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+const Template = ({ title, description, link, img, features }) => {
+  return (
+    <div
+      className="bg-primary text-white p-6 rounded-lg shadow-lg grid grid-cols-1 gap-8
+     2xl:grid-cols-2 2xl:grid ">
+      <h3 className="text-xl font-bold 2xl:order-1">{title}</h3>
+      <Image
+        src={img}
+        width={600}
+        height="2"
+        className="2xl:order-5 rounded-lg"></Image>
+      <Link
+        href={link}
+        target={"_blank"}
+        className="bg-white text-primary
+        p-2 rounded-md w-fit h-fit 2xl:order-2 2xl:justify-self-end">
+        Zum Template
+      </Link>
+      <div className="2xl:order-4 2xl:flex flex-col gap-4 ">
+        <p>{description}</p>
 
-                        <p>
-                            {description}
-                        </p>
-
-                        <Link href={link} target="_blank">
-                            <div className="bg-white text-primary w-fit p-2 text-sm rounded-md">
-                                Zum Template
-                            </div>
-                        </Link>
-                    </div>
-                </div>
-                <div className='w-full order-1 2xl:order-2'><img src={img} className='rounded-lg w-full' /></div>
-            </div>
+        <div>
+          <h4 className="text-lg font-bold">Features</h4>
+          {features.map((feature) => (
+            <li>{feature}</li>
+          ))}
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
-export default Template
+export default Template;
