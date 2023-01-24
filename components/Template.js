@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 const Template = ({ title, description, link, img }) => {
     return (
-        <div className="bg-gray-900 text-white p-4 rounded-lg shadow-lg ">
+        <div className="bg-primary text-white p-4 rounded-lg shadow-lg ">
             <h3 className="text-lg font-bold mb-4 ">{title}</h3>
             <div className='grid grid-rows-2 gap-6 2xl:grid-cols-2 grid-rows-none'>
                 <div className='order-2 2xl:order-1'>
@@ -14,7 +14,7 @@ const Template = ({ title, description, link, img }) => {
                         </p>
 
                         <Link href={link} target="_blank">
-                            <div className="bg-white text-gray-900 w-fit p-2 text-sm rounded-md">
+                            <div className="bg-white text-primary w-fit p-2 text-sm rounded-md">
                                 Zum Template
                             </div>
                         </Link>
